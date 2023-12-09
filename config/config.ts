@@ -1,5 +1,5 @@
 import { defineConfig } from 'umi';
-import routes from "./routes";
+import routes from './routes';
 
 export default defineConfig({
   nodeModulesTransform: {
@@ -7,5 +7,9 @@ export default defineConfig({
   },
   routes,
   fastRefresh: {},
-  layout: {},
+  // layout: {},
+  history: {
+    type: 'hash',
+  },
+  publicPath: process.env.NODE_ENV === 'production' ? '/sun-lab/' : '/',
 });
