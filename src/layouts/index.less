@@ -1,0 +1,40 @@
+.navs {
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-size: 100%;
+  width: 100%;
+  background-color: #001529;
+  padding: 0 24px;
+
+  h1 {
+    line-height: 46px;
+    color: #66CCFF;
+    font-size: 20px;
+  }
+
+  :global {
+    .menu {
+      background-color: transparent;
+
+      .ant-menu {
+        background-color: transparent;
+      }
+
+      .ant-menu-item:hover {
+        background-color: transparent;
+      }
+
+      .ant-menu.ant-menu-dark .ant-menu-item-selected {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.banner {
+  height: 220px;
+  background-image: url('../assets/banner3.jpg');
+}

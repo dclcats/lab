@@ -1,0 +1,41 @@
+
+.home-page {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-flow: wrap;
+  justify-content: space-around;
+
+  :global {
+    .hp-item-box {
+      max-width: 340px;
+      min-width: 240px;
+      height: 400px;
+      margin: 20px;
+      text-align: center;
+
+      .hp-item-title {
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .hp-item-message {
+        font-size: 14px;
+        color: #6c6c6c;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .hp-item-link {
+        font-size: 12px;
+        margin-top: 10px;
+        flex: 1;
+      }
+
+      .hp-item-more {
+        font-size: 8px;
+        margin: -3px 0 0 4px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
