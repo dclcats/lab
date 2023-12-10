@@ -1,4 +1,18 @@
-.navs {
+body {
+  font-family: 'PT Sans', Verdana, Tahoma, 'DejaVu Sans', sans-serif;
+}
+
+.footer {
+  :global {
+    .contact {
+      text-align: center;
+    }
+
+    .copyright-year {
+      display: block;
+      text-align: center;
+    }
+  }
 }
 
 .header {
@@ -11,16 +25,20 @@
 
   h1 {
     line-height: 46px;
-    color: #66CCFF;
+    color: #66ccff;
     font-size: 20px;
   }
 
   :global {
     .menu {
+      //display: block;
       background-color: transparent;
+      flex: 1;
 
       .ant-menu {
         background-color: transparent;
+        justify-content: flex-end;
+        line-height: 46px;
       }
 
       .ant-menu-item:hover {
@@ -29,6 +47,28 @@
 
       .ant-menu.ant-menu-dark .ant-menu-item-selected {
         background-color: transparent;
+      }
+    }
+
+    .dropdown-menu {
+      display: none;
+      line-height: 54px;
+      margin-left: 12px;
+    }
+
+    .dropdown-menu-icon {
+      font-size: 24px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .dropdown-menu {
+        display: block;
       }
     }
   }

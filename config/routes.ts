@@ -21,7 +21,7 @@ const routes: IRoute = [
         component: '@/pages/members',
       },
       {
-        title: 'SunLab-人员简介',
+        title: 'SunLab-Publications',
         path: '/Publications',
         component: '@/pages/publications',
       },
@@ -29,8 +29,5 @@ const routes: IRoute = [
   },
   { component: '@/pages/404' },
 ];
-
-console.log('----- routes');
-console.log(routes);
 
 export default routes;
