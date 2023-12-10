@@ -1,4 +1,6 @@
-export const PUBLICATIONS = [
+import { PUBLICATION_STRUCT } from '@/interface/publications';
+
+export const PUBLICATIONS: PUBLICATION_STRUCT[] = [
   {
     year: '2023',
     info: [

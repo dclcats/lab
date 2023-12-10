@@ -88,19 +88,19 @@ export default function Index(props: IRouteComponentProps) {
       <Content>{children}</Content>
       <Footer className={styles.footer}>
         <div className={'contact'}>
-          <span style={{ fontWeight: 'bold' }}>联系我: </span>
+          <span style={{ fontWeight: 'bold', marginRight: 12 }}>联系我: </span>
           <Space>
+            <a href="mailto:xdsun15s@imr.ac.cn">
+              <MailOutlined />
+            </a>
             <QqOutlined />
             <WechatOutlined />
             <WeiboCircleOutlined />
             <ZhihuOutlined />
-            <a href="mailto:xdsun15s@imr.ac.cn">
-              <MailOutlined />
-            </a>
           </Space>
         </div>
         <div className={'copyright-year'}>
-          &copy; 2023 -{new Date().getFullYear()}&nbsp;&nbsp;
+          &copy; 2023 - {new Date().getFullYear()}&nbsp;&nbsp;
           <HeartFilled />
           &nbsp;&nbsp;<span>小冬笋</span>
         </div>

@@ -9,10 +9,10 @@ function Publications() {
   return (
     <div className={styles.publications}>
       {PUBLICATIONS.map(({ year, info }) => (
-        <div className={'year-content'}>
+        <div key={year} className={'year-content'}>
           <Divider className={'divider'}>{year}</Divider>
           {info.map(({ title, author, address }) => (
-            <Space direction="vertical" className={'item'}>
+            <Space key={title} direction="vertical" className={'item'}>
               <Text strong>{title}</Text>
               <Text>{author}</Text>
               <Text strong>{address}</Text>
