@@ -1,6 +1,11 @@
 #!/bin/bash
 
-yarn build
+cmd="yarn build"
+
+echo $cmd
+eval $cmd
+
+echo "--------------"
 
 cd dist
 
