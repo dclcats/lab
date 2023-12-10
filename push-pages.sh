@@ -10,7 +10,7 @@ git add .
 
 git commit -m "pages"
 
-git remote add origin git@gitee.com:dclcats/sub-lab.git
+git remote add origin git@gitee.com:dclcats/xdsun.git
 
 git branch -m master gh-pages
 
