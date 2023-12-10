@@ -13,7 +13,7 @@ import {
 import { IRouteComponentProps, Redirect } from 'umi';
 import styles from './index.less';
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -21,9 +21,6 @@ export default function Index(props: IRouteComponentProps) {
   const { children, location, route, routes, history, match } = props;
 
   const [current, setCurrent] = useState(location.pathname);
-
-  console.log('--------props');
-  console.log(props);
 
   if (location.pathname === '/') {
     return <Redirect to={'/home'} />;
@@ -34,22 +31,27 @@ export default function Index(props: IRouteComponentProps) {
     setCurrent(e.key);
   };
 
-  const items = useMemo(
-    () => [
-      {
-        key: '/home',
-        label: '主页',
-      },
-      {
-        key: '/members',
-        label: '人员简介',
-      },
-      {
-        key: '/publications',
-        label: 'Publications',
-      },
-    ],
-    [],
+  const menuInfo: MenuProps = useMemo(
+    () => ({
+      selectedKeys: [current],
+      onClick: handleClickMenu,
+      theme: 'dark',
+      items: [
+        {
+          key: '/home',
+          label: '主页',
+        },
+        {
+          key: '/members',
+          label: '个人简历',
+        },
+        {
+          key: '/publications',
+          label: 'Publications',
+        },
+      ],
+    }),
+    [current],
   );
 
   return (
@@ -62,23 +64,11 @@ export default function Index(props: IRouteComponentProps) {
           When Smaller is Bigger and Less is More
         </Title>
         <div className={'menu'}>
-          <Menu
-            onClick={handleClickMenu}
-            selectedKeys={[current]}
-            mode="horizontal"
-            theme={'dark'}
-            items={items}
-          />
+          <Menu mode="horizontal" {...menuInfo} />
         </div>
 
         <div className={'dropdown-menu'}>
-          <Dropdown
-            menu={{
-              items,
-              selectedKeys: [current],
-              onClick: handleClickMenu,
-            }}
-          >
+          <Dropdown menu={menuInfo}>
             {/*<a onClick={(e) => e.preventDefault()}>*/}
             <MenuOutlined className={'dropdown-menu-icon'} />
             {/*</a>*/}

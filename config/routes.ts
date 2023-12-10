@@ -11,17 +11,17 @@ const routes: IRoute = [
     component: '@/layouts/index',
     routes: [
       {
-        title: 'SunLab-主页',
+        title: 'XDSun-主页',
         path: '/home',
         component: '@/pages/home',
       },
       {
-        title: 'SunLab-人员简介',
+        title: 'XDSun-个人简历',
         path: '/Members',
         component: '@/pages/members',
       },
       {
-        title: 'SunLab-Publications',
+        title: 'XDSun-Publications',
         path: '/Publications',
         component: '@/pages/publications',
       },

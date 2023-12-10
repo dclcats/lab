@@ -1,11 +1,19 @@
-import styles from './index.less';
-import { TITLE_BASE } from '@/constant';
+// import {useRef} from "react";
 import { Image, Typography } from 'antd';
+// import * as docx from 'docx-preview';
+import { TITLE_BASE } from '@/constant';
 import xds from '@/assets/members/XDS.png';
+import styles from './index.less';
 
 const { Text } = Typography;
 
 function Members() {
+  // const docsRef = useRef<any>();
+  // const inputRef = useRef<any>();
+  // const docxOptions = Object.assign({}, docx.defaultOptions || {}, {
+  //   debug: true,
+  //   experimental: true
+  // })
   return (
     <div className={styles.members}>
       <div className={'researcher-box'}>
@@ -22,13 +30,15 @@ function Members() {
           PhD, email：<a href="mailto:xdsun15s@imr.ac.cn">xdsun15s@imr.ac.cn</a>
         </p>
       </div>
+      {/*<input ref={inputRef} type={"file"} onChange={(e) => {*/}
+      {/*  if (e?.target?.files?.[0]) {*/}
+      {/*    docx.renderAsync(e?.target?.files?.[0], docsRef.current, undefined, docxOptions);*/}
+      {/*  }*/}
+      {/*}} />*/}
+      {/*<div ref={docsRef}></div>*/}
     </div>
   );
 }
-
-//
-// PhD, email： xdsun15s@imr.ac.cn
-// XDS.png
 
 Members.title = TITLE_BASE + '人员简介';
 
