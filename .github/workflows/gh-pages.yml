@@ -8,18 +8,17 @@ on:
 env:
   GIT_USER: Chris
   GIT_EMAIL: chichucan@126.com
-  THEME_REPO: theme-next/hexo-theme-next
-  THEME_BRANCH: main
-  DEPLOY_REPO: dclcats/hexo
+  DEPLOY_REPO: dclcats/xdsun
   DEPLOY_BRANCH: main
 
 jobs:
+
   build:
     name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-18.04]
+        os: [ubuntu-latest]
         node_version: [16.x]
 
     steps:
@@ -29,10 +28,9 @@ jobs:
           submodules: true  # Fetch hexo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Use Node.js ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v4
         with:
-          node-version: ${{ matrix.node_version }}
+          version: 8
 
       # 配置变量
       # 设置 timezone 为 Asia/Shanghai
@@ -42,11 +40,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install
+          pnpm install
 
       - name: build
         run: |
-          npm run build
+          pnpm run build
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
