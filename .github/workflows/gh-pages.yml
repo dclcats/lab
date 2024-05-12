@@ -1,0 +1,58 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GIT_USER: Chris
+  GIT_EMAIL: chichucan@126.com
+  THEME_REPO: theme-next/hexo-theme-next
+  THEME_BRANCH: master
+  DEPLOY_REPO: dclcats/hexo
+  DEPLOY_BRANCH: master
+
+jobs:
+  build:
+    name: Build on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        os: [ubuntu-18.04]
+        node_version: [16.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch hexo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      # 配置变量
+      # 设置 timezone 为 Asia/Shanghai
+      - name: Configuration environment
+        run: |
+          sudo timedatectl set-timezone "Asia/Shanghai"
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: build
+        run: |
+          npm run build
+      
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.XDSUN_DEPLOY_PRI }}
+          PUBLISH_BRANCH: gh-pages # default
+          publish_dir: ./dist
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
