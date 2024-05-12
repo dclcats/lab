@@ -3,15 +3,15 @@ name: github pages
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   GIT_USER: Chris
   GIT_EMAIL: chichucan@126.com
   THEME_REPO: theme-next/hexo-theme-next
-  THEME_BRANCH: master
+  THEME_BRANCH: main
   DEPLOY_REPO: dclcats/hexo
-  DEPLOY_BRANCH: master
+  DEPLOY_BRANCH: main
 
 jobs:
   build:
