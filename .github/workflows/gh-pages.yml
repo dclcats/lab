@@ -29,6 +29,11 @@ jobs:
         with:
           version: 8
 
+      - name: Use Node.js ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
       # 配置变量
       # 设置 timezone 为 Asia/Shanghai
       - name: Configuration environment
