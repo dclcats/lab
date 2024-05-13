@@ -11,5 +11,8 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
+  scripts: [
+    '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',
+  ],
   publicPath: process.env.NODE_ENV === 'production' ? '/sun-lab/' : '/',
 });
