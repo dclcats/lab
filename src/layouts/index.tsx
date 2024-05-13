@@ -91,7 +91,7 @@ export default function Index(props: IRouteComponentProps) {
         </div>
         <div className={'copyright-year'}>
           &copy; 2023 - {new Date().getFullYear()}&nbsp;&nbsp;
-          <HeartFilled />
+          <HeartFilled style={{ color: 'tomato' }} />
           &nbsp;&nbsp;<span>小冬笋</span>
         </div>
         <div style={{textAlign: 'center'}}>
