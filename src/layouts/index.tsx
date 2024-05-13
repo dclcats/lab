@@ -96,8 +96,8 @@ export default function Index(props: IRouteComponentProps) {
         </div>
         <div style={{textAlign: 'center'}}>
           <span id="busuanzi_container_page_pv" style={{display: "inline"}}>本站总访问量 <span id="busuanzi_value_page_pv"></span> 次</span>
-          <span> | </span>
-          <span id="busuanzi_container_page_uv" style={{display: "inline"}}>本站总访客数 <span id="busuanzi_value_page_uv"></span> 人</span>
+{/*           <span> | </span>
+          <span id="busuanzi_container_page_uv" style={{display: "inline"}}>本站总访客数 <span id="busuanzi_value_page_uv"></span> 人</span> */}
         </div>
       </Footer>
     </div>
